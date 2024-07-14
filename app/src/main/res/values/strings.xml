@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ConsumApp</string>
+    <string name="logo">Logo</string>
+    <string name="login">Login</string>
+    <string name="signup">Criar conta</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="generic_error">Ocorreu um erro, tente novamente mais tarde.</string>
+
+
+    <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
+    <string name="invalid_email_register_fragment">Insira um e-mail válido.</string>
+    <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
+    <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
+    <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+
+</resources>

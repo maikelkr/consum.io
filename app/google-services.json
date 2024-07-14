@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5138731749",
+    "project_id": "consumapp-2d78d",
+    "storage_bucket": "consumapp-2d78d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5138731749:android:ecaf82613bd47b8166fa0c",
+        "android_client_info": {
+          "package_name": "com.example.consumapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdrLEVGobeSvMojQTDDyLubsEbSi-olIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
