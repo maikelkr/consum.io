@@ -15,6 +15,8 @@ This is a simple application for tracking fuel consumption in user vehicles. It 
 
 - <img src="https://github.com/user-attachments/assets/22c67b9a-d553-4ea7-a3c1-44956b8a2b98" width="15" /> Android Studio
 
+- <img src="https://github.com/user-attachments/assets/b7ccde83-a06a-4f95-b00d-8fc7b098f9d5" width="15" /> Firebase FireStore
+
 
 ## How to Run the Project
 
