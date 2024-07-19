@@ -2,6 +2,10 @@
 
 This is a simple application for tracking fuel consumption in user vehicles. It was created in Kotlin as a way to learn the language.
 
+- Working progress:
+
+  ![](https://geps.dev/progress/25)
+
 ## Features
 
 - Record fuel fill-ups (date, quantity in liters, price per liter, mileage)
