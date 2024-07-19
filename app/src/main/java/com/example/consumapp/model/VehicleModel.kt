@@ -7,12 +7,12 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class VehicleModel(
     var id : String = "",
-    var vehicleModel : String = "",
-    var vehicleBrand : String = "",
-    var vehicleCategory : String = "",
-    var vehicleAge : String = "",
+    var model : String = "",
+    var brand : String = "",
+    var category : String = "",
+    var age : String = "",
     var kmActual : String = "",
-    var gasConsum : String = "",
+    var consum : String = "",
     var gasSize : String = ""
 ) : Parcelable {
     init {

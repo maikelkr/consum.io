@@ -113,10 +113,10 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/add_vehicle_button"
+        android:layout_marginTop="37dp"
         app:layout_constraintEnd_toEndOf="@+id/add_vehicle_button"
         app:layout_constraintStart_toStartOf="@+id/add_vehicle_button"
-        app:layout_constraintTop_toTopOf="@+id/add_vehicle_button" />
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_consum_input" />
 
     <Button
         android:id="@+id/add_vehicle_button"
