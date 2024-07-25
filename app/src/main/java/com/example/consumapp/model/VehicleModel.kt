@@ -6,7 +6,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class VehicleModel(
-    var id : String = "",
+    var id : Int = 0,
+    var key : String = "",
     var model : String = "",
     var brand : String = "",
     var category : String = "",
@@ -16,6 +17,6 @@ data class VehicleModel(
     var gasSize : String = ""
 ) : Parcelable {
     init {
-        this.id = FirebaseHelper.getDataBase().push().key ?: ""
+        this.key = FirebaseHelper.getDataBase().push().key ?: ""
     }
 }
