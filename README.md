@@ -4,7 +4,7 @@ This is a simple application for tracking fuel consumption in user vehicles. It 
 
 - Working progress:
 
-  ![](https://geps.dev/progress/25)
+  ![](https://geps.dev/progress/36)
 
 ## Features
 
