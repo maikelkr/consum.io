@@ -12,15 +12,14 @@ import com.example.consumapp.model.VehicleModel
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
-import com.google.firebase.firestore.ktx.firestore
 
 class AddVehicleScreen : AppCompatActivity() {
     private lateinit var binding: ActivityAddVehicleScreenBinding
-    var vehicle = VehicleModel()
+    private var vehicle = VehicleModel()
     private var newVehicle: Boolean = true
     private var funToDo: Int = -1
     private var vehicleId: Int = -1
-    private val refDbVehicles = com.google.firebase.ktx.Firebase.firestore.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).collection("vehicles")
+    private var vehicleKey: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +30,17 @@ class AddVehicleScreen : AppCompatActivity() {
             goStartScreen()
         }
         funToDo = intent.getIntExtra("funToDo", 1)
-        vehicleId = intent.getIntExtra("vehicleId", -1)
         if (funToDo == 1) {
             newVehicle = true
             binding.vehicleAddText.setText("Adicionar veículo")
+            vehicleKey = vehicle.key
             initListeners()
         } else if (funToDo == 0){
             newVehicle = false
             binding.vehicleAddText.setText("Atualizar veículo")
+            binding.addVehicleButton.setText("Atualizar veículo")
+            vehicleId = intent.getIntExtra("vehicleId", -1)
+            vehicleKey = intent.getStringExtra("vehicleKey").toString()
             editVehicle()
         } else {
             binding.vehicleAddText.setText("Erro")
@@ -69,37 +71,43 @@ class AddVehicleScreen : AppCompatActivity() {
         val vehAge = binding.vehicleAgeInput.text.toString().trim()
         val vehConsum = binding.vehicleConsumInput.text.toString().trim()
 
-
         if (vehModel.isNotEmpty() || vehBrand.isNotEmpty() || vehAge.isNotEmpty() || vehConsum.isNotEmpty()){
             progressSignup(true)
             if (newVehicle == true) {
                 vehicle = VehicleModel()
-                refDbVehicles.get().addOnSuccessListener { querySnapshot ->
+                Firebase.firestore
+                .collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid)
+                .collection("vehicles").get().addOnSuccessListener { querySnapshot ->
                     for (document in querySnapshot) {
                         if (document != null) {
-                            val id = document.data?.get("id")!!.toString()
-                            vehicle.id = id.toInt() + 1
-                            println("ID novo" + vehicle.id.toString())
+                            val id = document.data.get("id")?.toString()
+                            vehicle.id = (id?.toInt() ?: 0) + 1
                         }
                     }
+                    vehicle.model = vehModel
+                    vehicle.brand = vehBrand
+                    vehicle.age = vehAge
+                    vehicle.consum = vehConsum
+                    saveVehicle()
                 }
+            } else {
+                vehicle.id = vehicleId
+                vehicle.model = vehModel
+                vehicle.brand = vehBrand
+                vehicle.age = vehAge
+                vehicle.consum = vehConsum
+                saveVehicle()
             }
-            println("ID depois do for " + vehicle.id.toString())
-            vehicle.model = vehModel
-            vehicle.brand = vehBrand
-            vehicle.age = vehAge
-            vehicle.consum = vehConsum
-
-            saveVehicle()
         }else{
             Toast.makeText(applicationContext,"Preencha todos os campos corretamente.", Toast.LENGTH_SHORT).show()
             progressSignup(false)
         }
     }
     private fun saveVehicle(){
-        Firebase.firestore
-            .collection("users").document(FirebaseHelper.getIdUser() ?: "")
-            .collection("vehicles").document(vehicle.key)
+        Firebase.firestore.collection("users")
+            .document(FirebaseHelper.getIdUser() ?: "")
+            .collection("vehicles")
+            .document(vehicleKey)
             .set(vehicle)
             .addOnCompleteListener{ vehicle ->
             if(vehicle.isSuccessful){
@@ -120,20 +128,20 @@ class AddVehicleScreen : AppCompatActivity() {
         }
     }
     private fun editVehicle(){
-        refDbVehicles.get().addOnSuccessListener { querySnapshot ->
+        Firebase.firestore
+            .collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid)
+            .collection("vehicles").get().addOnSuccessListener { querySnapshot ->
             for (document in querySnapshot) {
                 if (document != null) {
-                    val id = document.data?.get("id")!!.toString()
-                    val model = document.data?.get("model")?.toString()
-                    val brand = document.data?.get("brand")?.toString()
-                    val age = document.data?.get("age")?.toString()
+                    val id = document.data.get("id")!!.toString()
+                    val model = document.data.get("model")?.toString()
+                    val brand = document.data.get("brand")?.toString()
+                    val age = document.data.get("age")?.toString()
                     binding.vehicleModelInput.setText(model)
                     binding.vehicleAgeInput.setText(age)
                     binding.vehicleBrandInput.setText(brand)
                     vehicleId = id.toInt()
                     initListeners()
-                    // val age = document.getString("age")
-
                 }
             }
         }

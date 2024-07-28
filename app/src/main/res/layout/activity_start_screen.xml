@@ -37,68 +37,16 @@
         android:text="Meus veículos"
         android:textColor="@color/white"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/vehicle_card"
+        app:layout_constraintBottom_toTopOf="@+id/view_holder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/logo_image"
         app:layout_constraintTop_toBottomOf="@+id/logo_image" />
 
-    <ImageView
-        android:id="@+id/vehicle_picture"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:translationZ="90dp"
-        app:layout_constraintStart_toStartOf="@+id/vehicle_card"
-        app:layout_constraintTop_toTopOf="@+id/vehicle_card"
-        app:srcCompat="@drawable/vehicle_picture" />
-
-    <TextView
-        android:id="@+id/vehicle_name"
-        android:layout_width="240dp"
-        android:layout_height="65dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="66dp"
-        android:ellipsize="end"
-        android:lines="2"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:translationZ="90dp"
-        app:layout_constraintEnd_toEndOf="@+id/vehicle_card"
-        app:layout_constraintTop_toTopOf="@+id/vehicle_card" />
-
-    <TextView
-        android:id="@+id/vehicle_age"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
-        android:text="Ano 2000"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="@+id/vehicle_card"
-        app:layout_constraintStart_toStartOf="@+id/vehicle_card" />
-
-    <ImageView
-        android:id="@+id/remove_button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="@+id/vehicle_card"
-        app:layout_constraintEnd_toEndOf="@+id/vehicle_card"
-        app:srcCompat="@drawable/remove_btn" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/vehicle_card"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/view_holder"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:background="@drawable/rounded_corner"
         android:elevation="10dp"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,6 +64,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/add_btn"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
