@@ -9,6 +9,7 @@
     tools:context=".AddVehicleScreen">
 
     <ImageView
+        android:contentDescription="@string/profile"
         android:id="@+id/imageProfile"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -19,6 +20,7 @@
         app:srcCompat="@drawable/profile_picture" />
 
     <ImageView
+        android:contentDescription="@string/ret"
         android:id="@+id/back_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -36,13 +38,15 @@
         android:text="Adicionar veículo"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_button" />
 
     <EditText
+        android:inputType="text"
+        android:autofillHints="@string/model"
         android:id="@+id/vehicle_model_input"
         android:layout_width="0dp"
         android:layout_height="49dp"
@@ -52,13 +56,15 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:ems="10"
-        android:hint="Modelo do veículo"
+        android:hint="@string/model"
         android:textColorHint="@color/darkgray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vehicle_add_text" />
 
     <EditText
+        android:inputType="text"
+        android:autofillHints="Marca do veículo"
         android:id="@+id/vehicle_brand_input"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -75,6 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/vehicle_model_input" />
 
     <EditText
+        android:autofillHints="Idade do veículo"
         android:id="@+id/vehicle_age_input"
         android:layout_width="0dp"
         android:layout_height="49dp"
@@ -92,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/vehicle_brand_input" />
 
     <EditText
+        android:autofillHints="Consumo"
         android:id="@+id/vehicle_consum_input"
         android:layout_width="0dp"
         android:layout_height="49dp"
@@ -124,8 +132,8 @@
         android:layout_height="60dp"
         android:backgroundTint="@color/black"
         android:layout_marginTop="26dp"
-        android:text="Adicionar veículo"
-        android:textSize="16dp"
+        android:text="@string/add"
+        android:textSize="16sp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -15,8 +15,7 @@ import com.google.firebase.ktx.Firebase
 
 class StartScreen : AppCompatActivity() {
     private lateinit var binding: ActivityStartScreenBinding
-    private var vehicle = VehicleModel()
-    var vehicleItem: VehicleModel = VehicleModel()
+    private var vehicleItem: VehicleModel = VehicleModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,15 +50,15 @@ class StartScreen : AppCompatActivity() {
             for (document in query) {
                 if (document != null) {
                     vehicleItem = VehicleModel(
-                        document.data?.get("id")?.toString().toString().toInt(),
-                        document.data?.get("key")?.toString().toString(),
-                        document.data?.get("model")?.toString().toString(),
-                        document.data?.get("brand")?.toString().toString(),
-                        document.data?.get("category")?.toString().toString(),
-                        document.data?.get("age")?.toString().toString(),
-                        document.data?.get("kmActual")?.toString().toString(),
-                        document.data?.get("consum")?.toString().toString(),
-                        document.data?.get("gasSize")?.toString().toString()
+                        /*document.data.get("id")?.toString().toString().toInt(),
+                        document.data.get("key")?.toString().toString(),
+                        document.data.get("model")?.toString().toString(),
+                        document.data.get("brand")?.toString().toString(),
+                        document.data.get("category")?.toString().toString(),
+                        document.data.get("age")?.toString().toString(),
+                        document.data.get("kmActual")?.toString().toString(),
+                        document.data.get("consum")?.toString().toString(),
+                        document.data.get("gasSize")?.toString().toString()*/
                     )
                 }
                 println(vehicleItem)
