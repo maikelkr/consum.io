@@ -41,6 +41,7 @@ class AddVehicleScreen : AppCompatActivity() {
             binding.addVehicleButton.setText("Atualizar veículo")
             vehicleId = intent.getIntExtra("vehicleId", -1)
             vehicleKey = intent.getStringExtra("vehicleKey").toString()
+            println(vehicleKey+" "+vehicleId+"=================================== 2")
             editVehicle()
         } else {
             binding.vehicleAddText.setText("Erro")
@@ -70,6 +71,8 @@ class AddVehicleScreen : AppCompatActivity() {
         val vehBrand = binding.vehicleBrandInput.text.toString().trim()
         val vehAge = binding.vehicleAgeInput.text.toString().trim()
         val vehConsum = binding.vehicleConsumInput.text.toString().trim()
+        val vehCapacity = binding.vehicleCapacityInput.text.toString().trim()
+        val vehKm = binding.vehicleKmInput.text.toString().trim()
 
         if (vehModel.isNotEmpty() || vehBrand.isNotEmpty() || vehAge.isNotEmpty() || vehConsum.isNotEmpty()){
             progressSignup(true)
@@ -88,14 +91,20 @@ class AddVehicleScreen : AppCompatActivity() {
                     vehicle.brand = vehBrand
                     vehicle.age = vehAge
                     vehicle.consum = vehConsum
+                    vehicle.gasSize = vehCapacity
+                    vehicle.kmActual = vehKm
                     saveVehicle()
                 }
             } else {
+                println(vehicleKey+" "+vehicleId+"=================================== 4")
                 vehicle.id = vehicleId
+                vehicle.key = vehicleKey
                 vehicle.model = vehModel
                 vehicle.brand = vehBrand
                 vehicle.age = vehAge
                 vehicle.consum = vehConsum
+                vehicle.gasSize = vehCapacity
+                vehicle.kmActual = vehKm
                 saveVehicle()
             }
         }else{
@@ -107,7 +116,7 @@ class AddVehicleScreen : AppCompatActivity() {
         Firebase.firestore.collection("users")
             .document(FirebaseHelper.getIdUser() ?: "")
             .collection("vehicles")
-            .document(vehicleKey)
+            .document(vehicle.key)
             .set(vehicle)
             .addOnCompleteListener{ vehicle ->
             if(vehicle.isSuccessful){
@@ -126,6 +135,9 @@ class AddVehicleScreen : AppCompatActivity() {
             Toast.makeText(applicationContext, "Veículo não foi adicionado.",Toast.LENGTH_SHORT).show()
             progressSignup(false)
         }
+        println(vehicle.key)
+        println(vehicle.id)
+        println("=================================== 5")
     }
     private fun editVehicle(){
         Firebase.firestore
@@ -133,15 +145,23 @@ class AddVehicleScreen : AppCompatActivity() {
             .collection("vehicles").get().addOnSuccessListener { querySnapshot ->
             for (document in querySnapshot) {
                 if (document != null) {
-                    val id = document.data.get("id")!!.toString()
-                    val model = document.data.get("model")?.toString()
-                    val brand = document.data.get("brand")?.toString()
-                    val age = document.data.get("age")?.toString()
-                    binding.vehicleModelInput.setText(model)
-                    binding.vehicleAgeInput.setText(age)
-                    binding.vehicleBrandInput.setText(brand)
-                    vehicleId = id.toInt()
-                    initListeners()
+                    if (document.data.get("id") as Long == vehicleId.toLong()){
+                        val model = document.data.get("model")?.toString()
+                        val brand = document.data.get("brand")?.toString()
+                        val age = document.data.get("age")?.toString()
+                        val consum = document.data.get("consum")?.toString()
+                        val gasSize = document.data.get("gasSize")?.toString()
+                        val kmActual = document.data.get("kmActual")?.toString()
+                        val category = document.data.get("category")?.toString()
+
+                        binding.vehicleConsumInput.setText(consum)
+                        binding.vehicleModelInput.setText(model)
+                        binding.vehicleAgeInput.setText(age)
+                        binding.vehicleBrandInput.setText(brand)
+                        binding.vehicleCapacityInput.setText(gasSize)
+                        binding.vehicleKmInput.setText(kmActual)
+                        initListeners()
+                    }
                 }
             }
         }
