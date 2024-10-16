@@ -22,10 +22,10 @@
             android:name=".SignupScreen"
             android:exported="false" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".StartScreen"
             android:exported="false" />
         <activity
-            android:name=".StartScreen"
+            android:name=".LoginScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

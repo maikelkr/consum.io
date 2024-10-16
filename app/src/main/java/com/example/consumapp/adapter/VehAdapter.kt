@@ -17,17 +17,18 @@ class VehAdapter(private val context: Context, private val vehicles: MutableList
     }
 
     override fun onBindViewHolder(holder: VehAdapter.VehicleViewHolder, position: Int) {
+        val ageText = "Ano "+vehicles[position].age
         holder.model.text = vehicles[position].model
-        holder.age.text = "Ano " + vehicles[position].age
+        holder.age.text = ageText
         holder.brand.text = vehicles[position].brand
     }
 
     override fun getItemCount() = vehicles.size
 
     inner class VehicleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val model = itemView.findViewById<TextView>(R.id.vehicle_name)
-        val age = itemView.findViewById<TextView>(R.id.vehicle_age)
-        val brand = itemView.findViewById<TextView>(R.id.vehicle_brand)
+        val model: TextView = itemView.findViewById(R.id.vehicle_name)
+        val age: TextView = itemView.findViewById(R.id.vehicle_age)
+        val brand: TextView = itemView.findViewById(R.id.vehicle_brand)
     }
 
 }

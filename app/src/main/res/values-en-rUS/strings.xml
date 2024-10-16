@@ -17,4 +17,5 @@
     <string name="invalid_password_register_fragment">Wrong password, please try again.</string>
     <string name="email_in_use_register_fragment">There is an account with this email address.</string>
     <string name="strong_password_register_fragment">Please insert a stronger password.</string>
+    <string name="att">Update</string>
 </resources>

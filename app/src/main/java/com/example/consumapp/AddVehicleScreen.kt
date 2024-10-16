@@ -26,24 +26,28 @@ class AddVehicleScreen : AppCompatActivity() {
         binding = ActivityAddVehicleScreenBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        binding.backButton.setOnClickListener(){
+        binding.backButton.setOnClickListener{
             goStartScreen()
         }
         funToDo = intent.getIntExtra("funToDo", 1)
-        if (funToDo == 1) {
-            newVehicle = true
-            binding.vehicleAddText.setText("Adicionar veículo")
-            vehicleKey = vehicle.key
-            initListeners()
-        } else if (funToDo == 0){
-            newVehicle = false
-            binding.vehicleAddText.setText("Atualizar veículo")
-            binding.addVehicleButton.setText("Atualizar veículo")
-            vehicleId = intent.getIntExtra("vehicleId", -1)
-            vehicleKey = intent.getStringExtra("vehicleKey").toString()
-            editVehicle()
-        } else {
-            binding.vehicleAddText.setText("Erro")
+        when (funToDo) {
+            1 -> {
+                newVehicle = true
+                binding.vehicleAddText.setText(R.string.add)
+                vehicleKey = vehicle.key
+                initListeners()
+            }
+            0 -> {
+                newVehicle = false
+                binding.vehicleAddText.setText(R.string.att)
+                binding.addVehicleButton.setText(R.string.att)
+                vehicleId = intent.getIntExtra("vehicleId", -1)
+                vehicleKey = intent.getStringExtra("vehicleKey").toString()
+                editVehicle()
+            }
+            else -> {
+                binding.vehicleAddText.setText(R.string.generic_error)
+            }
         }
 
     }
@@ -73,14 +77,14 @@ class AddVehicleScreen : AppCompatActivity() {
 
         if (vehModel.isNotEmpty() || vehBrand.isNotEmpty() || vehAge.isNotEmpty() || vehConsum.isNotEmpty()){
             progressSignup(true)
-            if (newVehicle == true) {
+            if (newVehicle) {
                 vehicle = VehicleModel()
                 Firebase.firestore
                 .collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid)
                 .collection("vehicles").get().addOnSuccessListener { querySnapshot ->
                     for (document in querySnapshot) {
                         if (document != null) {
-                            val id = document.data.get("id")?.toString()
+                            val id = document.data["id"]?.toString()
                             vehicle.id = (id?.toInt() ?: 0) + 1
                         }
                     }
@@ -133,13 +137,13 @@ class AddVehicleScreen : AppCompatActivity() {
             .collection("vehicles").get().addOnSuccessListener { querySnapshot ->
             for (document in querySnapshot) {
                 if (document != null) {
-                    val id = document.data.get("id")!!.toString()
-                    val model = document.data.get("model")?.toString()
-                    val brand = document.data.get("brand")?.toString()
-                    val age = document.data.get("age")?.toString()
-                    binding.vehicleModelInput.setText(model)
-                    binding.vehicleAgeInput.setText(age)
-                    binding.vehicleBrandInput.setText(brand)
+                    val id = document.data["id"]!!.toString()
+                    val model = document.data["model"]
+                    val brand = document.data["brand"]
+                    val age = document.data["age"]
+                    binding.vehicleModelInput.setText(model.toString())
+                    binding.vehicleAgeInput.setText(age.toString())
+                    binding.vehicleBrandInput.setText(brand.toString())
                     vehicleId = id.toInt()
                     initListeners()
                 }
