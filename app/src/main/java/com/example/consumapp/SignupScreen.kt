@@ -34,7 +34,7 @@ class SignupScreen : AppCompatActivity() {
             finish()
         }
     }
-    fun progressSignup(inProgress : Boolean){
+    private fun progressSignup(inProgress : Boolean){
         if (inProgress){
             binding.progressSignup.visibility = View.VISIBLE
             binding.signupButton.visibility = View.GONE
@@ -43,26 +43,26 @@ class SignupScreen : AppCompatActivity() {
             binding.signupButton.visibility = View.VISIBLE
         }
     }
-    fun signup(){
+    private fun signup(){
         val email = binding.userMail.text.toString()
         val password = binding.userPassword.text.toString()
         val confirmPassword = binding.userConfirmPassword.text.toString()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.userMail.setError("Digite um e-mail válido.")
+            binding.userMail.error = "Digite um e-mail válido."
             return
         }
         if (password.length<6){
-            binding.userPassword.setError("A sua senha deve conter 6 ou mais caracteres.")
+            binding.userPassword.error = "A sua senha deve conter 6 ou mais caracteres."
             return
         }
         if (confirmPassword!=password){
-            binding.userConfirmPassword.setError("As senhas digitadas não correspondem.")
+            binding.userConfirmPassword.error = "As senhas digitadas não correspondem."
             return
         }
         signupWithFireBase(email, password)
     }
-    fun signupWithFireBase(email : String, password : String){
+    private fun signupWithFireBase(email : String, password : String){
         progressSignup(true)
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnSuccessListener {
             it.user?.let { user->

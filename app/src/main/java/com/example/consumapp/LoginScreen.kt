@@ -33,7 +33,7 @@ class LoginScreen : AppCompatActivity() {
             login()
         }
     }
-    fun progressLogin(inProgress : Boolean){
+    private fun progressLogin(inProgress : Boolean){
         if (inProgress){
             binding.progressLogin.visibility = View.VISIBLE
             binding.loginButton.visibility = View.GONE
@@ -42,21 +42,21 @@ class LoginScreen : AppCompatActivity() {
             binding.loginButton.visibility = View.VISIBLE
         }
     }
-    fun login(){
+    private fun login(){
         val email = binding.userMail.text.toString()
         val password = binding.userPassword.text.toString()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.userMail.setError("Digite um e-mail válido.")
+            binding.userMail.error = "Digite um e-mail válido."
             return
         }
         if (password.length<6){
-            binding.userPassword.setError("A sua senha deve conter 6 ou mais caracteres.")
+            binding.userPassword.error = "A sua senha deve conter 6 ou mais caracteres."
             return
         }
         loginWithFireBase(email, password)
     }
-    fun loginWithFireBase(email : String, password : String){
+    private fun loginWithFireBase(email : String, password : String){
         progressLogin(true)
         FirebaseAuth.getInstance().signInWithEmailAndPassword(
             email,
