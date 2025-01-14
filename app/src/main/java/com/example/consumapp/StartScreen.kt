@@ -24,24 +24,22 @@ class StartScreen : AppCompatActivity() {
         binding = ActivityStartScreenBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        when (Firebase.auth.currentUser) {
-            null -> {
-                startActivity(Intent(this,LoginScreen::class.java))
-                finish()
-            }
-        }
+        /*FirebaseAuth.getInstance().currentUser?.let {
+            startActivity(Intent(this,StartScreen::class.java))
+            finish()
+        }*/
         showVehicle()
         clickListeners()
     }
     private fun clickListeners(){
 
         binding.profilePicture.setOnClickListener {
-            if (toggled == false){
+            if (!toggled){
                 toggleMenu(true)
-                toggled = true
+                toggled
             }else{
                 toggleMenu(false)
-                toggled = false
+                !toggled
             }
         }
         binding.frameMenuExit.setOnClickListener {
@@ -87,15 +85,15 @@ class StartScreen : AppCompatActivity() {
             for (document in query) {
                 if (document != null) {
                     vehicleItem = VehicleModel(
-                        document.data.get("id").toString().toInt(),
-                        document.data.get("key").toString(),
-                        document.data.get("model").toString(),
-                        document.data.get("brand").toString(),
-                        document.data.get("category").toString(),
-                        document.data.get("age").toString(),
-                        document.data.get("kmActual").toString(),
-                        document.data.get("consum").toString(),
-                        document.data.get("gasSize").toString()
+                        document.data["id"].toString().toInt(),
+                        document.data["key"].toString(),
+                        document.data["model"].toString(),
+                        document.data["brand"].toString(),
+                        document.data["category"].toString(),
+                        document.data["age"].toString(),
+                        document.data["kmActual"].toString(),
+                        document.data["consum"].toString(),
+                        document.data["gasSize"].toString()
                     )
                 }
                 vehicleList.add(vehicleItem)

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ConsumApp"
         tools:targetApi="31">
         <activity
+            android:name=".DialogConfirmDelete"
+            android:exported="false" />
+        <activity
             android:name=".ProfileScreen"
             android:exported="false" />
         <activity

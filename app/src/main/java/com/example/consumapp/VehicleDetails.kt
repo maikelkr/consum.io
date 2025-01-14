@@ -18,6 +18,10 @@ class VehicleDetails : AppCompatActivity() {
         binding = ActivityVehicleDetailsBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+        /*FirebaseAuth.getInstance().currentUser?.let {
+            startActivity(Intent(this,StartScreen::class.java))
+            finish()
+        }*/
         vehicleId = intent.getIntExtra("vehicleId", -1)
         vehicleKey = intent.getStringExtra("vehicleKey").toString()
         println(vehicleKey + " " + vehicleId + "=================================== 1")

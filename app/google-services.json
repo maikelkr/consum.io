@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "5138731749",
-    "project_id": "consumapp-2d78d",
-    "storage_bucket": "consumapp-2d78d.appspot.com"
+    "project_number": "876785166580",
+    "project_id": "consumio-1718d",
+    "storage_bucket": "consumio-1718d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:5138731749:android:ecaf82613bd47b8166fa0c",
+        "mobilesdk_app_id": "1:876785166580:android:069eb5c71c792aaaf016a1",
         "android_client_info": {
           "package_name": "com.example.consumapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDdrLEVGobeSvMojQTDDyLubsEbSi-olIU"
+          "current_key": "AIzaSyDUQIor6l8DHSuIO0_RQVUe3O-PPa97qC0"
         }
       ],
       "services": {

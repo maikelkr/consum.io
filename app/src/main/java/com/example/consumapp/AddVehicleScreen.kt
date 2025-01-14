@@ -29,6 +29,10 @@ class AddVehicleScreen : AppCompatActivity() {
         binding.backButton.setOnClickListener(){
             goStartScreen()
         }
+        /*FirebaseAuth.getInstance().currentUser?.let {
+            startActivity(Intent(this,StartScreen::class.java))
+            finish()
+        }*/
         funToDo = intent.getIntExtra("funToDo", 1)
         if (funToDo == 1) {
             newVehicle = true

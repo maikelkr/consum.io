@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ConsumApp</string>
+    <string name="app_version">Version 1.0.1</string>
     <string name="logo">Logo</string>
     <string name="login">Sign In</string>
     <string name="signup">Sign Up</string>
@@ -18,4 +19,7 @@
     <string name="email_in_use_register_fragment">There is an account with this email address.</string>
     <string name="strong_password_register_fragment">Please insert a stronger password.</string>
     <string name="att">Update</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

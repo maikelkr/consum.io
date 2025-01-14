@@ -8,6 +8,7 @@
     <color name="gray">#383838</color>
     <color name="darkwhite">#ABABAB</color>
     <color name="red">#9B0000</color>
+    <color name="light_red">#FF0000</color>
     <color name="grayopaque">#A8383838</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
