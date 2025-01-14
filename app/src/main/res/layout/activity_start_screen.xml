@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/profile_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profile_picture"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo21" />
 
     <TextView
         android:id="@+id/my_vehicles_title"
