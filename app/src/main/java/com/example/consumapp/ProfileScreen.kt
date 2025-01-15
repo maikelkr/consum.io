@@ -2,6 +2,7 @@ package com.example.consumapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +16,7 @@ import com.google.firebase.firestore.firestore
 class ProfileScreen : AppCompatActivity() {
     private lateinit var binding: ActivityProfileScreenBinding
     private var user = UserModel()
-    private var lastActivity : String = "confirmDelete"
-    private var lastActivityCmd : Int = 0
+    private var toggled : Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileScreenBinding.inflate(layoutInflater)
@@ -26,23 +26,54 @@ class ProfileScreen : AppCompatActivity() {
         startActivity(Intent(this,StartScreen::class.java))
         finish()
     }*/
-    lastActivity = intent.getStringExtra("lastActivity").toString()
-    if (lastActivity == "confirmDelete"){
-        lastActivityCmd = intent.getIntExtra("funToDo", 0)
-        if (lastActivityCmd == 1){
-            deleteProfile()
-        }
+
+    onClickListeners()
+    editProfile()
+}
+private fun toggleMenu(toggled : Boolean){
+    if (toggled){
+        binding.frameDeleteProfile.visibility = View.VISIBLE
+        binding.frameDeleteProfileBg.visibility = View.VISIBLE
+    }else{
+        binding.frameDeleteProfile.visibility = View.GONE
+        binding.frameDeleteProfileBg.visibility = View.GONE
     }
+}
+private fun onClickListeners(){
     binding.backButton.setOnClickListener{
         goStartScreen()
     }
+    /*binding.deleteProfileButton.setOnClickListener {
+        val dialogConfirmDelete = Intent(this, DialogConfirmDelete::class.java)
+        dialogConfirmDelete.putExtra("funToDo", 1)
+        startActivity(dialogConfirmDelete)
+        finish()
+    }*/
     binding.deleteProfileButton.setOnClickListener {
-        val fragmentConfirmDelete = Intent(this, FragmentConfirmDelete::class.java)
-        fragmentConfirmDelete.putExtra("funToDo", 1)
-        startActivity(fragmentConfirmDelete)
+        if (!toggled){
+            toggleMenu(true)
+            toggled
+        }else{
+            toggleMenu(false)
+            !toggled
+        }
+    }
+    binding.frameDeleteProfileBg.setOnClickListener {
+        toggleMenu(false)
+        toggled = false
+    }
+    binding.buttonCancel.setOnClickListener {
+        toggleMenu(false)
+        toggled = false
+    }
+    binding.buttonConfirm.setOnClickListener {
+        Firebase.firestore.collection("users")
+            .document(FirebaseHelper.getIdUser() ?: "")
+            .delete()
+        val signupScreen = Intent(this, SignupScreen::class.java)
+        startActivity(signupScreen)
         finish()
     }
-    editProfile()
 }
 private fun goStartScreen(){
     val startScreen = Intent(this, StartScreen::class.java)

@@ -20,7 +20,7 @@ class AddVehicleScreen : AppCompatActivity() {
     private var funToDo: Int = -1
     private var vehicleId: Int = -1
     private var vehicleKey: String = ""
-
+    private var toggled : Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddVehicleScreenBinding.inflate(layoutInflater)
@@ -28,6 +28,30 @@ class AddVehicleScreen : AppCompatActivity() {
         setContentView(binding.root)
         binding.backButton.setOnClickListener(){
             goStartScreen()
+        }
+        binding.profilePicture.setOnClickListener {
+            if (!toggled){
+                toggleMenu(true)
+                toggled
+            }else{
+                toggleMenu(false)
+                !toggled
+            }
+        }
+        binding.frameMenuExit.setOnClickListener {
+            toggleMenu(false)
+            toggled = false
+        }
+        binding.buttonProfile.setOnClickListener {
+            val profileScreen = Intent(this, ProfileScreen::class.java)
+            startActivity(profileScreen)
+            finish()
+        }
+        binding.buttonLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val loginScreen = Intent(this, LoginScreen::class.java)
+            startActivity(loginScreen)
+            finish()
         }
         /*FirebaseAuth.getInstance().currentUser?.let {
             startActivity(Intent(this,StartScreen::class.java))
@@ -51,6 +75,15 @@ class AddVehicleScreen : AppCompatActivity() {
             binding.vehicleAddText.setText("Erro")
         }
 
+    }
+    private fun toggleMenu(toggled : Boolean){
+        if (toggled){
+            binding.frameMenu.visibility = View.VISIBLE
+            binding.frameMenuExit.visibility = View.VISIBLE
+        }else{
+            binding.frameMenu.visibility = View.GONE
+            binding.frameMenuExit.visibility = View.GONE
+        }
     }
     private fun goStartScreen(){
         val startScreen = Intent(this, StartScreen::class.java)

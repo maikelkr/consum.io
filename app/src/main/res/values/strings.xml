@@ -8,7 +8,7 @@
     <string name="generic_error">Ocorreu um erro, tente novamente mais tarde.</string>
     <string name="profile_update_error" translatable="false">Ocorreu um erro ao atualizar os dados.</string>
     <string name="profile_update_success" translatable="false">Dados atualizados com sucesso.</string>
-
+    <string name="confirm_delete" translatable="false">Tem certeza que deseja remover sua conta e todos os seus dados permanentemente?</string>
     <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
     <string name="invalid_email_register_fragment">Insira um e-mail válido.</string>
     <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
@@ -19,6 +19,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="att">Update</string>
+    <string name="back_btn">Back button</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user">Usuário</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="confirm_password">Confirmar senha</string>
+    <string name="save">Salvar</string>
+    <string name="delete_profile">Excluir minha conta</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Excluir</string>
 
 
 </resources>

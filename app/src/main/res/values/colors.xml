@@ -4,12 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="darkgray">#1A1A1A</color>
     <color name="blue">#0076D0</color>
-    <color name="primary_color">#00BB56</color>
+    <color name="green">#007530</color>
     <color name="gray">#383838</color>
     <color name="darkwhite">#ABABAB</color>
     <color name="red">#9B0000</color>
     <color name="light_red">#FF0000</color>
     <color name="grayopaque">#A8383838</color>
+    <color name="blackopaque">#99000000</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
