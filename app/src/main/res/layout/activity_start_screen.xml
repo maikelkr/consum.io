@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkgray"
+    android:background="@color/dark_gray"
     tools:context=".StartScreen">
 
     <ImageView
@@ -33,9 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Meus veículos"
-        android:textColor="@color/darkwhite"
-        android:textSize="30dp"
+        android:text="@string/my_vehicles"
+        android:textColor="@color/dark_white"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_picture" />
@@ -67,7 +67,7 @@
         android:id="@+id/frame_menu_exit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blackopaque"
+        android:background="@color/black_opaque"
         android:visibility="gone"/>
 
     <FrameLayout
@@ -89,9 +89,9 @@
             android:layout_height="75dp"
             android:textAlignment="center"
             android:padding="22dp"
-            android:text="Editar perfil"
+            android:text="@string/edit_profile"
             android:textSize="20sp"
-            android:textColor="@color/darkwhite"
+            android:textColor="@color/dark_white"
             android:textStyle="bold"/>
 
         <TextView
@@ -101,9 +101,9 @@
             android:textAlignment="center"
             android:padding="22dp"
             android:layout_marginTop="75dp"
-            android:text="Sair"
+            android:text="@string/exit"
             android:textSize="20sp"
-            android:textColor="@color/darkwhite"
+            android:textColor="@color/dark_white"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/button_profile" />
     </FrameLayout>

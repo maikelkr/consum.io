@@ -2,13 +2,13 @@
     <string name="app_name">ConsumApp</string>
     <string name="app_version">Version 1.0.1</string>
     <string name="logo">Logo</string>
-    <string name="login">Login</string>
+    <string name="login">Entrar</string>
     <string name="signup">Criar conta</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">Login</string>
     <string name="generic_error">Ocorreu um erro, tente novamente mais tarde.</string>
-    <string name="profile_update_error" translatable="false">Ocorreu um erro ao atualizar os dados.</string>
-    <string name="profile_update_success" translatable="false">Dados atualizados com sucesso.</string>
-    <string name="confirm_delete" translatable="false">Tem certeza que deseja remover sua conta e todos os seus dados permanentemente?</string>
+    <string name="profile_update_error">Ocorreu um erro ao atualizar os dados.</string>
+    <string name="profile_update_success">Dados atualizados com sucesso.</string>
+    <string name="confirm_delete">Tem certeza que deseja remover sua conta e todos os seus dados permanentemente?</string>
     <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
     <string name="invalid_email_register_fragment">Insira um e-mail válido.</string>
     <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
@@ -19,16 +19,36 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="att">Update</string>
-    <string name="back_btn">Back button</string>
-    <string name="profile_picture">Profile Picture</string>
+    <string name="back_btn">Voltar</string>
+    <string name="profile_picture">Perfil</string>
     <string name="user">Usuário</string>
     <string name="e_mail">E-mail</string>
     <string name="password">Senha</string>
     <string name="confirm_password">Confirmar senha</string>
-    <string name="save">Salvar</string>
+    <string name="save">Aplicar</string>
     <string name="delete_profile">Excluir minha conta</string>
     <string name="cancel">Cancelar</string>
     <string name="delete">Excluir</string>
+    <string name="profile">Perfil</string>
+    <string name="my_vehicles">Meus veículos</string>
+    <string name="add">Adicionar</string>
+    <string name="ret">Voltar</string>
+    <string name="model">Modelo do veículo</string>
+    <string name="model_veh">Modelo do veículo</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="exit">Sair</string>
+    <string name="year_text">Ano</string>
+    <string name="km_l_text">km/L</string>
+    <string name="capacity_text">Capacidade</string>
+    <string name="autonomy_text">Autonomia</string>
+    <string name="actual_km_text">Km Atual</string>
+    <string name="fuel_text">Abastecer</string>
+    <string name="edit_text">Editar</string>
+    <string name="vehicle_name_text">Nome do veículo</string>
+    <string name="vehicle_brand_text">Marca do veículo</string>
+    <string name="vehicle_age">Idade</string>
+    <string name="create_account_text">Criar uma conta</string>
+    <string name="just_have_account_text">Já tenho uma conta. Fazer login.</string>
 
 
 </resources>

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkgray"
+    android:background="@color/dark_gray"
     tools:context=".AddVehicleScreen">
 
     <ImageView
@@ -36,7 +36,7 @@
         android:layout_marginTop="50dp"
         android:text="Adicionar veículo"
         android:textAlignment="center"
-        android:textColor="@color/darkwhite"
+        android:textColor="@color/dark_white"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -55,7 +55,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textSize="18sp"
-        android:textColorHint="@color/darkwhite"
+        android:textColorHint="@color/dark_white"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vehicle_add_text" />
@@ -71,7 +71,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/darkwhite"
+        android:textColorHint="@color/dark_white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/vehicle_model_input" />
@@ -88,7 +88,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/darkwhite"
+        android:textColorHint="@color/dark_white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/vehicle_model_input"
         app:layout_constraintTop_toBottomOf="@+id/vehicle_brand_input" />
@@ -104,7 +104,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/darkwhite"
+        android:textColorHint="@color/dark_white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/vehicle_brand_input"
         app:layout_constraintTop_toTopOf="@+id/vehicle_age_input" />
@@ -121,7 +121,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/darkwhite"
+        android:textColorHint="@color/dark_white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/vehicle_age_input"
         app:layout_constraintTop_toBottomOf="@+id/vehicle_age_input" />
@@ -137,7 +137,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/darkwhite"
+        android:textColorHint="@color/dark_white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/vehicle_consum_input"
         app:layout_constraintTop_toTopOf="@+id/vehicle_capacity_input" />
@@ -159,7 +159,7 @@
         android:layout_marginTop="60dp"
         android:backgroundTint="@color/green"
         android:text="Adicionar veículo"
-        android:textColor="@color/darkwhite"
+        android:textColor="@color/dark_white"
         android:textSize="18sp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +171,7 @@
         android:id="@+id/frame_menu_exit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blackopaque"
+        android:background="@color/black_opaque"
         android:visibility="gone"/>
 
     <FrameLayout
@@ -195,7 +195,7 @@
             android:padding="22dp"
             android:text="Editar perfil"
             android:textSize="20sp"
-            android:textColor="@color/darkwhite"
+            android:textColor="@color/dark_white"
             android:textStyle="bold"/>
 
         <TextView
@@ -205,9 +205,9 @@
             android:textAlignment="center"
             android:padding="22dp"
             android:layout_marginTop="75dp"
-            android:text="Sair"
+            android:text="@string/exit"
             android:textSize="20sp"
-            android:textColor="@color/darkwhite"
+            android:textColor="@color/dark_white"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/button_profile" />
     </FrameLayout>

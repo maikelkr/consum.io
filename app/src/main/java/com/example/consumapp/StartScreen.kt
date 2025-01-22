@@ -24,10 +24,10 @@ class StartScreen : AppCompatActivity() {
         binding = ActivityStartScreenBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        FirebaseAuth.getInstance().currentUser?.let {
+        /*FirebaseAuth.getInstance().currentUser?.let {
             startActivity(Intent(this,StartScreen::class.java))
             finish()
-        }
+        }*/
         showVehicle()
         clickListeners()
     }
