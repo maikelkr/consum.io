@@ -8,6 +8,32 @@
     android:background="@color/dark_gray"
     tools:context=".SignupScreen">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logowriten"
+        app:layout_constraintBottom_toTopOf="@+id/login_screen_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/login_screen_text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/create_account_text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/user_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/user_mail"
         android:layout_width="221dp"
@@ -17,6 +43,7 @@
         android:background="@drawable/rounded_corner"
         android:ems="10"
         android:hint="@string/e_mail"
+        android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -25,6 +52,42 @@
         app:layout_constraintTop_toBottomOf="@id/login_screen_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/user_password"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="@string/password"
+        android:autofillHints="password"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/dark_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_mail" />
+
+    <EditText
+        android:id="@+id/user_confirm_password"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+        android:autofillHints="confirmPassword"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/dark_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_password" />
 
     <ProgressBar
         android:id="@+id/progress_signup"
@@ -49,23 +112,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_confirm_password" />
 
-    <EditText
-        android:id="@+id/user_confirm_password"
-        android:layout_width="221dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/dark_white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_password" />
-
     <TextView
         android:id="@+id/text_login"
         android:layout_width="wrap_content"
@@ -76,49 +122,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_confirm_password" />
-
-    <TextView
-        android:id="@+id/login_screen_text"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/create_account_text"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/user_mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/user_password"
-        android:layout_width="221dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/dark_white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_mail" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/logowriten"
-        app:layout_constraintBottom_toTopOf="@+id/login_screen_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_version"

@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile" />
 
-
     <ImageView
         android:id="@+id/back_button"
         android:layout_width="40dp"
@@ -116,8 +115,6 @@
         app:layout_constraintEnd_toEndOf="@+id/vehicle_img_age"
         app:layout_constraintStart_toStartOf="@+id/vehicle_text_age"
         app:layout_constraintTop_toBottomOf="@+id/vehicle_text_age" />
-
-
 
     <TextView
         android:id="@+id/cardView_3"
@@ -230,7 +227,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:padding="5dp"
-        android:text="L"
+        android:text="@string/liters_text"
         android:textColor="@color/dark_white"
         android:textSize="14sp"
         android:translationZ="10dp"
@@ -289,7 +286,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:padding="5dp"
-        android:text="km"
+        android:text="@string/km_txt"
         android:textColor="@color/dark_white"
         android:textSize="14sp"
         android:translationZ="10dp"
@@ -348,7 +345,7 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:padding="5dp"
-        android:text="Km"
+        android:text="@string/km_txt"
         android:textColor="@color/dark_white"
         android:textSize="14sp"
         android:translationZ="10dp"
@@ -388,6 +385,5 @@
         android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="@+id/refuel_button"
         app:layout_constraintTop_toTopOf="@+id/edit_button" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

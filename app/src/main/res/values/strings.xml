@@ -44,11 +44,21 @@
     <string name="actual_km_text">Km Atual</string>
     <string name="fuel_text">Abastecer</string>
     <string name="edit_text">Editar</string>
-    <string name="vehicle_name_text">Nome do veículo</string>
-    <string name="vehicle_brand_text">Marca do veículo</string>
+    <string name="vehicle_name_text">Nome do Veículo</string>
+    <string name="vehicle_brand_text">Marca do Veículo</string>
     <string name="vehicle_age">Idade</string>
     <string name="create_account_text">Criar uma conta</string>
     <string name="just_have_account_text">Já tenho uma conta. Fazer login.</string>
+    <string name="n_o_tenho_uma_conta_criar_conta">Não tenho uma conta. Criar conta.</string>
+    <string name="add_vehicle">Adicionar veículo</string>
+    <string name="model_text">Modelo*</string>
+    <string name="brand_text">Marca*</string>
+    <string name="veh_year_text">Ano*</string>
+    <string name="consum_text">Consumo Km/L*</string>
+    <string name="fuel_capacity_text">Tanque (L)</string>
+    <string name="km_text">Km Atual</string>
+    <string name="km_txt">Km</string>
+    <string name="liters_text">L</string>
 
 
 </resources>

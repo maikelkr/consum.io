@@ -189,7 +189,7 @@ class AddVehicleScreen : AppCompatActivity() {
                         val consum = document.data.get("consum")?.toString()
                         val gasSize = document.data.get("gasSize")?.toString()
                         val kmActual = document.data.get("kmActual")?.toString()
-                        val category = document.data.get("category")?.toString()
+                        //val category = document.data.get("category")?.toString()
 
                         binding.vehicleConsumInput.setText(consum)
                         binding.vehicleModelInput.setText(model)

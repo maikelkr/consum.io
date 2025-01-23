@@ -8,6 +8,30 @@
     android:background="@color/dark_gray"
     tools:context=".LoginScreen">
 
+    <ImageView
+        android:layout_width="301dp"
+        android:layout_height="101dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logowriten"
+        app:layout_constraintBottom_toTopOf="@+id/login_screen_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/login_screen_text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/user_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/user_mail"
         android:layout_width="221dp"
@@ -15,7 +39,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -35,29 +59,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_password" />
 
-    <TextView
-        android:id="@+id/login_screen_text"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="36dp"
-        android:text="Fazer login"
-        android:textAlignment="center"
+    <EditText
+        android:id="@+id/user_password"
+        android:layout_width="221dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/user_mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/text_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginTop="90dp"
-        android:text="Não tenho uma conta. Criar conta."
-        android:textColor="@color/white"
+        android:textColorHint="@color/dark_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_password" />
+        app:layout_constraintTop_toBottomOf="@+id/user_mail" />
 
     <Button
         android:id="@+id/login_button"
@@ -72,33 +89,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_password" />
 
-    <EditText
-        android:id="@+id/user_password"
-        android:layout_width="221dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
+    <TextView
+        android:id="@+id/text_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="90dp"
+        android:text="@string/create_account_text"
         android:textColor="@color/white"
-        android:textColorHint="@color/dark_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_mail" />
-
-    <ImageView
-        android:layout_width="301dp"
-        android:layout_height="101dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/logowriten"
-        app:layout_constraintBottom_toTopOf="@+id/login_screen_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/user_password" />
 
     <TextView
         android:id="@+id/text_version"
@@ -110,6 +110,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

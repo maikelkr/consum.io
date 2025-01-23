@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile" />
 
-
     <ImageView
         android:id="@+id/back_button"
         android:layout_width="40dp"
@@ -34,10 +33,10 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
-        android:text="Adicionar veículo"
+        android:text="@string/add_vehicle"
         android:textAlignment="center"
         android:textColor="@color/dark_white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +50,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Modelo*"
+        android:hint="@string/model_text"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textSize="18sp"
@@ -67,7 +66,7 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Marca*"
+        android:hint="@string/brand_text"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="@color/white"
@@ -83,7 +82,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Ano*"
+        android:hint="@string/veh_year_text"
         android:inputType="number"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -99,7 +98,7 @@
         android:layout_height="60dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Consumo Km/L*"
+        android:hint="@string/consum_text"
         android:inputType="number"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -116,7 +115,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Tanque (L)"
+        android:hint="@string/fuel_capacity_text"
         android:inputType="number"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -132,7 +131,7 @@
         android:layout_height="60dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Km Atual"
+        android:hint="@string/km_text"
         android:inputType="number"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -158,7 +157,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="@color/green"
-        android:text="Adicionar veículo"
+        android:text="@string/add"
         android:textColor="@color/dark_white"
         android:textSize="18sp"
         app:cornerRadius="10dp"
@@ -193,7 +192,7 @@
             android:layout_height="75dp"
             android:textAlignment="center"
             android:padding="22dp"
-            android:text="Editar perfil"
+            android:text="@string/edit_profile"
             android:textSize="20sp"
             android:textColor="@color/dark_white"
             android:textStyle="bold"/>
@@ -211,5 +210,4 @@
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/button_profile" />
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
