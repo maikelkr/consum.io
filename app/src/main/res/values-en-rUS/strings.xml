@@ -59,4 +59,5 @@
     <string name="km_text">Actual Km</string>
     <string name="km_txt">Km</string>
     <string name="liters_text">L</string>
+    <string name="vehicle_picture">Vehicle Picture</string>
 </resources>
